@@ -666,7 +666,7 @@
   (fn [req]
     (if-let [basic-auth (:basic-auth req)]
       (client (-> req (dissoc :basic-auth)
-                  (assoc-in [:headers "authorization"]
+                  (assoc-in [:headers "Authorization"]
                             (basic-auth-value basic-auth))))
       (client req))))
 
